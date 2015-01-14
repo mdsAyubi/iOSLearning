@@ -56,9 +56,53 @@ for (var i=1;i<=10;i++){
     println(5*i);
 }
 
+var array = [2,4,5,6]
+
+for (var i=0;i<4;i++){
+    println(array[i])
+}
+
+for x in array{
+    println(x)
+}
 
 
+for (index,x) in enumerate(array){
+    println(index)
+}
 
+for (index,x) in enumerate(array){
+    array[index]=x/2;
+}
+array.count
+println(array)
+
+var i=2;
+while(i<20){
+    i=i+2;
+    println(i)
+}
+i=0;
+while(i<array.count){
+    array[i]--;
+    i++;
+}
+
+
+var number = 5;
+
+var isPrime = true;
+if (number == 1){
+    isPrime = false;
+}
+if (number != 1 && number != 2){
+
+for (var j=2;j<number;j++){
+    if((number % i) == 0){
+        isPrime = false
+    }
+}
+}
 
 
 

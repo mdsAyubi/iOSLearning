@@ -10,10 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var userCity: UITextField!
+    
     @IBOutlet weak var result: UILabel!
     
     
+    @IBOutlet weak var userCity: UITextField!
     @IBAction func findWeather(sender: AnyObject) {
         
         var city = userCity.text.stringByReplacingOccurrencesOfString(" ", withString: "-")
@@ -31,7 +32,7 @@ class ViewController: UIViewController {
                 if error == nil{
                     
                     var urlContent = NSString(data: data, encoding: NSUTF8StringEncoding) as NSString!
-                    //println(urlContent)
+                    println(urlContent)
                     
                     var urlContentArray = urlContent.componentsSeparatedByString("<span class=\"phrase\">")
                     if urlContentArray.count > 0{
@@ -75,7 +76,16 @@ class ViewController: UIViewController {
             showError()
             
         }
+        
+        
+        
+        
+        
+        
+        
+        
 
+        
         
     }
     
@@ -86,10 +96,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //var city = "london"
         
-        
-        
-    }
+            }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

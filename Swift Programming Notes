@@ -1,0 +1,39 @@
+Swift Programming Notes
+
+println("hello, WWDC")
+
+1. The Basics
+
+a. Variables:
+var varName="Awesome"
+let varName: String="Awesome"
+
+var version: Double=1.0
+let isAwesome = true
+
+
+String:
+Unicode names can also be used.
+Has unicode String. String can be used as NSString
+for in loop to interate in a string.
+Concatenation by using +. 
+
+eg let mathResult="\(a) times \(b) is \(a*b)"
+
+Cant add to constant string
+
+Array and String:
+Array as NSArray
+
+var names = ["abc","def"]
+var legs = ["anr":6,"snake":0]
+
+OR
+var names:String = ["abc","def"]
+We have typed collections.
+
+Loops:
+while, do while..{}
+for in 1...5 closed interval
+for in 1..5 half open interval    
+

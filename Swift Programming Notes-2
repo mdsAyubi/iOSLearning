@@ -1,0 +1,94 @@
+**Topics**
+	Optionals
+	Memory Management
+	Initialization
+	Closures
+	Pattern Matching
+
+***Optionals
+Case of String to Integer conversion
+
+Optionals reperesent possibly missing values and comes in 2 different states
+
+One is where value is missing eg var optionalNum:Int? 
+By default initialized to nil. Nil can be anything like a null ref or primitive. There is no distinction. It just means value is missing.
+
+And the other state is having some value like
+optionalNumber = 6. 
+
+Non optional types like String and Integer cant be nil.
+
+eg var myString:String = "A string " //Okay
+var myString: String = nil //Compiler time error
+
+You know it will be there
+
+func findIndex(string: String, array:String[]) -> Int?{
+	
+	for (index, value) in enumerate(array){
+		if value == string
+			return index
+	}
+	return nil //No need to return -1 or something like that
+}
+
+Unwrapping Optionals:
+var neighbour = ["A","B","C"]
+let index:Int? = findIndex("A",neighbour)
+
+if index {
+	println("Hello \(neighbout[index])")
+}
+else{
+	println("Not found")
+}
+
+println("Hello \(neighbout[index])") will create a problem at runtime saying optional value is not unwrapped. We can get rid of it using ! like this
+
+println("Hello \(neighbout[index! ])"), but thhis is not safe. We are not sure that we got the value. 
+
+
+There is a better way of doing like this
+
+if let indexValue = index {
+	...
+}
+
+This code will unwrap if the value of index exists and then assign it to indexValue.
+
+Or even shorter way like this
+
+
+if let indexValue = findIndex("A",neighbour) {
+	...
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

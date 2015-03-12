@@ -389,7 +389,7 @@ Since closure is the last arg, we can remove the () and write like this
 	println("Hello")
 }
 
-***Generics
+
   
 
 

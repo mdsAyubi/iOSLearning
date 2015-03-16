@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		531E38591AB77C360026309A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 531E38581AB77C360026309A /* CoreLocation.framework */; };
 		53D9899F1AB7697700A1D090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9899E1AB7697700A1D090 /* AppDelegate.swift */; };
 		53D989A11AB7697700A1D090 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D989A01AB7697700A1D090 /* ViewController.swift */; };
 		53D989A41AB7697700A1D090 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53D989A21AB7697700A1D090 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		531E38581AB77C360026309A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		53D989991AB7697700A1D090 /* MapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D9899D1AB7697700A1D090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53D9899E1AB7697700A1D090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531E38591AB77C360026309A /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 		53D989901AB7697700A1D090 = {
 			isa = PBXGroup;
 			children = (
+				531E38581AB77C360026309A /* CoreLocation.framework */,
 				53D9899B1AB7697700A1D090 /* MapDemo */,
 				53D989B11AB7697700A1D090 /* MapDemoTests */,
 				53D9899A1AB7697700A1D090 /* Products */,
@@ -405,6 +409,7 @@
 				53D989BA1AB7697700A1D090 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		53D989BB1AB7697700A1D090 /* Build configuration list for PBXNativeTarget "MapDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				53D989BD1AB7697700A1D090 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

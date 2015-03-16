@@ -8,12 +8,22 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var map: MKMapView!
+    var locationManager = CLLocationManager()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
         
         var latitude:CLLocationDegrees = 40.7
         var longitude:CLLocationDegrees = -73.9
@@ -43,6 +53,28 @@ class ViewController: UIViewController, MKMapViewDelegate {
         var uilpgr = UILongPressGestureRecognizer(target: self, action: "action:")//Adding a colon ensures that the arguments are sent when the function action gets called
         uilpgr.minimumPressDuration = 2
         map.addGestureRecognizer(uilpgr)
+        
+        
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        println(locations)
+        var userLocation: CLLocation = locations[0] as CLLocation
+        var latitude = userLocation.coordinate.latitude
+        var longitude = userLocation.coordinate.longitude
+        
+        var latDelta:CLLocationDegrees = 0.01 //for latitudinal zoom
+        var longDelta:CLLocationDegrees = 0.01 //for longitudinal zoom
+        
+        var span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
+        
+        var location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        
+        var region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        
+        self.map.setRegion(region, animated:true)
+        
+        
         
         
     }

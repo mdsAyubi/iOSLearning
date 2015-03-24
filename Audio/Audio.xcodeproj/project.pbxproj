@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53B03D471AC1EFB0009B2B74 /* bach1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 53B03D461AC1EFB0009B2B74 /* bach1.mp3 */; };
 		53FC47A41ABF883E00A1C61F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC47A31ABF883E00A1C61F /* AppDelegate.swift */; };
 		53FC47A61ABF883E00A1C61F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC47A51ABF883E00A1C61F /* ViewController.swift */; };
 		53FC47A91ABF883E00A1C61F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FC47A71ABF883E00A1C61F /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		53B03D461AC1EFB0009B2B74 /* bach1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bach1.mp3; path = ../bach1.mp3; sourceTree = "<group>"; };
 		53FC479E1ABF883E00A1C61F /* Audio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Audio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FC47A21ABF883E00A1C61F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53FC47A31ABF883E00A1C61F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				53FC47A31ABF883E00A1C61F /* AppDelegate.swift */,
 				53FC47A51ABF883E00A1C61F /* ViewController.swift */,
+				53B03D461AC1EFB0009B2B74 /* bach1.mp3 */,
 				53FC47A71ABF883E00A1C61F /* Main.storyboard */,
 				53FC47AA1ABF883E00A1C61F /* Images.xcassets */,
 				53FC47AC1ABF883E00A1C61F /* LaunchScreen.xib */,
@@ -194,6 +197,7 @@
 			files = (
 				53FC47A91ABF883E00A1C61F /* Main.storyboard in Resources */,
 				53FC47AE1ABF883E00A1C61F /* LaunchScreen.xib in Resources */,
+				53B03D471AC1EFB0009B2B74 /* bach1.mp3 in Resources */,
 				53FC47AB1ABF883E00A1C61F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +409,7 @@
 				53FC47BF1ABF883E00A1C61F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		53FC47C01ABF883E00A1C61F /* Build configuration list for PBXNativeTarget "AudioTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				53FC47C21ABF883E00A1C61F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

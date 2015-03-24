@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     @IBAction func play(sender: AnyObject) {
         
         var audioPath = NSBundle.mainBundle().pathForResource("bach1", ofType: "mp3")!
-        var error:NSError? =nil
+        println(audioPath)
+        var error:NSError? = nil    
         
         player = AVAudioPlayer(contentsOfURL: NSURL(string: audioPath), error: &error)
         

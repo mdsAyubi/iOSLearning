@@ -78,27 +78,22 @@ class ViewController: UIViewController {
     }
     
     func swipedUpGestureHandler(){
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("tossItUp"), userInfo:nil, repeats:true)
+        println("Inside swipted handler")
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.02, target: self, selector: Selector("tossItUp"), userInfo:nil, repeats:true)
     }
     
     func tossItUp(){
         
+        //println("Inside...tossitup")
+        
         counter++
-        if counter == 5{
+        if counter == 36{
             counter = 1
         }
         
-        //for var i=1;i<=5;i++ {
-        
         let frame = UIImage(named: "\(counter).png")
         imageView.image = frame
-            //sleep(1);
-        //}
-        
-        //for i in 5...1 {
-         //   let frame = UIImage(named: "\(i).png")
-          //  imageView.image = frame
-        //}
+ 
         
     }
     

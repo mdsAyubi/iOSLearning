@@ -49,7 +49,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //if  storedToDoItems.length != 0 {
             toDoItems = []
             for var i = 0; i < storedToDoItems.count; i++ {
-                toDoItems.append(storedToDoItems[i] as NSString)
+                toDoItems.append(storedToDoItems[i] as! String)
             }
             
             

@@ -67,7 +67,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
                 var title = ""
                 if error == nil {
                     
-                    if let p = CLPlacemark(placemark: placemarks?[0] as CLPlacemark) {
+                    if let p = CLPlacemark(placemark: placemarks?[0] as! CLPlacemark) {
                         var locality = ""
                         var country = ""
                         
@@ -108,7 +108,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         //println(locations)
         
-        var userLocation:CLLocation = locations[0] as CLLocation
+        var userLocation:CLLocation = locations[0] as! CLLocation
         var latitude = userLocation.coordinate.latitude
         var longitude = userLocation.coordinate.longitude
         

@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>787A5C62-CD23-4E75-A7DF-E3A8CB925F14</string>
+	<string>B9081CE4-8775-47CF-A21D-FDDB2D2ED3AD</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Tosser</string>
+	<string>TosserV0.1</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0C80B05C70D0655484C94A37AA6D875BC139995E</key>
 		<string>github.com:mdsAyubi/iOSLearning.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Tosser/Tosser.xcodeproj</string>
+	<string>TosserV0.1/TosserV0.1.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0C80B05C70D0655484C94A37AA6D875BC139995E</key>

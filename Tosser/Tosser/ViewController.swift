@@ -79,7 +79,7 @@ class ViewController: UIViewController {
     
     func swipedUpGestureHandler(){
         println("Inside swipted handler")
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.02, target: self, selector: Selector("tossItUp"), userInfo:nil, repeats:true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("tossItUp"), userInfo:nil, repeats:true)
     }
     
     func tossItUp(){
@@ -87,7 +87,7 @@ class ViewController: UIViewController {
         //println("Inside...tossitup")
         
         counter++
-        if counter == 36{
+        if counter == 73 {
             counter = 1
         }
         

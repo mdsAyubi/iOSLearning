@@ -30,7 +30,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        var appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var context:NSManagedObjectContext = appDel.managedObjectContext!
 
         //https://www.googleapis.com/blogger/v3/blogs/byurl?url=http://googleblog.blogspot.co.uk&key=AIzaSyCWHQIxPFhF5hG-UIppwBB1zl2BBeRO4zg
@@ -47,7 +47,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             }else{
                 //println(data)
                 self.clearDB(context)
-                let jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+                let jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
                 //println(jsonResult)
                 
                 var items = [[String:String]()]
@@ -57,18 +57,18 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
                 for var i=0; i<jsonResult["items"]!.count; i++ {
                     items.append([String:String]())
                     
-                    item = jsonResult["items"]![i] as NSDictionary
+                    item = jsonResult["items"]![i] as! NSDictionary
                     
                     
-                    items[i]["content"] = item["content"] as NSString
-                    items[i]["title"] = item["title"] as NSString
-                    items[i]["publishedDate"] = item["published"] as NSString
+                    items[i]["content"] = item["content"] as! String
+                    items[i]["title"] = item["title"] as! String
+                    items[i]["publishedDate"] = item["published"] as! String
                     
-                    var authorDictionary = item["author"] as NSDictionary
-                    items[i]["author"] = authorDictionary["displayName"]! as NSString
+                    var authorDictionary = item["author"] as! NSDictionary
+                    items[i]["author"] = authorDictionary["displayName"] as! String
                     
                     
-                    newBlogItem = NSEntityDescription.insertNewObjectForEntityForName("BlogItems", inManagedObjectContext: context) as NSManagedObject
+                    newBlogItem = NSEntityDescription.insertNewObjectForEntityForName("BlogItems", inManagedObjectContext: context) as! NSManagedObject
                     
                     newBlogItem.setValue(items[i]["author"], forKey: "author")
                     newBlogItem.setValue(items[i]["title"], forKey: "title")
@@ -102,7 +102,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         var results = context.executeFetchRequest(request, error: nil)
         
         for result in results! {
-            context.deleteObject(result as NSManagedObject)
+            context.deleteObject(result as! NSManagedObject)
             context.save(nil)
         }
         
@@ -117,7 +117,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     func insertNewObject(sender: AnyObject) {
         let context = self.fetchedResultsController.managedObjectContext
         let entity = self.fetchedResultsController.fetchRequest.entity!
-        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context) as NSManagedObject
+        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context) as! NSManagedObject
              
         // If appropriate, configure the new managed object.
         // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
@@ -139,12 +139,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 
-                let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
+                let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
                 activeItem = object.valueForKey("content")!.description
 
                 
                 
-                let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
+                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
                 
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
@@ -159,12 +159,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = self.fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
+        let sectionInfo = self.fetchedResultsController.sections![section] as! NSFetchedResultsSectionInfo
         return sectionInfo.numberOfObjects
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         //cell.textLabel?.text = "Blog Item"
         self.configureCell(cell, atIndexPath: indexPath)
         return cell
@@ -178,7 +178,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let context = self.fetchedResultsController.managedObjectContext
-            context.deleteObject(self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject)
+            context.deleteObject(self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject)
                 
             var error: NSError? = nil
             if !context.save(&error) {
@@ -191,7 +191,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-        let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
+        let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
         cell.textLabel!.text = object.valueForKey("title")!.description
         cell.detailTextLabel!.text = object.valueForKey("author")!.description
     }

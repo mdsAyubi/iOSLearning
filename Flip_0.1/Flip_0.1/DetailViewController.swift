@@ -26,6 +26,10 @@ class DetailViewController: UIViewController {
     //Final state of the coin, to be determined by this
     var probabilityOfHead:Int = 0
     
+    //Variables to account for gesture recongnizers
+    var swipeRight:UISwipeGestureRecognizer!,swipeLeft:UISwipeGestureRecognizer!,swipeUp:UISwipeGestureRecognizer!,swipeDown:UISwipeGestureRecognizer!
+    
+    
     var detailItem: AnyObject? {
         didSet {
             // Update the view.
@@ -50,27 +54,49 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
         println("Type of coin selected is \(cointType)")
+        //self.navigationController.interactivePopGestureRecognizer.delegate = self
         
         
-        var swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
+        swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right;
+        
         
         self.view.addGestureRecognizer(swipeRight)
         
-        var swipeUp = UISwipeGestureRecognizer(target: self, action: "swiped:")
+        swipeUp = UISwipeGestureRecognizer(target: self, action: "swiped:")
         swipeUp.direction = UISwipeGestureRecognizerDirection.Up
         
         self.view.addGestureRecognizer(swipeUp)
         
-        var swipeDown = UISwipeGestureRecognizer(target: self, action: "swiped:")
+        swipeDown = UISwipeGestureRecognizer(target: self, action: "swiped:")
         swipeDown.direction = UISwipeGestureRecognizerDirection.Down
         
         self.view.addGestureRecognizer(swipeDown)
         
-        var swipeLeft = UISwipeGestureRecognizer(target: self, action: "swiped:")
+        swipeLeft = UISwipeGestureRecognizer(target: self, action: "swiped:")
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
         
         self.view.addGestureRecognizer(swipeLeft)
+    }
+    
+    
+    func disableAllGestures() {
+        
+        self.swipeUp.enabled = false
+        //self.swipeDown.enabled = false
+        self.swipeLeft.enabled = false
+        self.swipeRight.enabled = false
+    }
+    
+    func enableAllGestures() {
+        swipeUp.enabled = true
+        //swipeDown.enabled = true
+        swipeLeft.enabled = true
+        swipeRight.enabled = true
+    }
+    
+    func isGestureEnabled() -> Bool {
+        return self.swipeUp.enabled
     }
     
     func swiped(gesture: UIGestureRecognizer){
@@ -108,13 +134,20 @@ class DetailViewController: UIViewController {
         
         if event.subtype == UIEventSubtype.MotionShake {
             println("User shakes...")
-            swipedUpGestureHandler()
+            
+            //If coin is not rotating, start rotation
+            if isGestureEnabled() == true  {
+                println("Starting animation with shake")
+                swipedUpGestureHandler()
+            }
             
         }
     }
     
     func swipedUpGestureHandler(){
         println("Inside swipted handler")
+        
+        disableAllGestures()
         
         //Rotate 5-10 times
         totalTimesToRotate = 5 + Int(arc4random_uniform(5))
@@ -174,6 +207,9 @@ class DetailViewController: UIViewController {
         
         let frame = UIImage(named: "\(finalImageNum).png")
         imageView.image = frame
+        
+        //After setting final result image, enable gestures
+        enableAllGestures()
     }
 
     override func didReceiveMemoryWarning() {

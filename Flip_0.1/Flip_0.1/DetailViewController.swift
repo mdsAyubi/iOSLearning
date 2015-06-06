@@ -19,6 +19,9 @@ class DetailViewController: UIViewController {
     //Type of coin received
     var cointType:String = "Dollar"
     
+    //Number of pics for different coins
+    var numberOfPicsForCoin:Int = 1
+    
     //Rotation accounting variables
     var totalTimesToRotate:Int = 0
     var currentNumberOfRotations:Int = 0
@@ -45,6 +48,9 @@ class DetailViewController: UIViewController {
             println(detail)
             cointType = detail as! String
             
+            numberOfPicsForCoin = (cointType == "Dollar" ? 73 : 78)
+            println("Total pics for coin \(numberOfPicsForCoin)")
+            
         }
         
     }
@@ -54,8 +60,9 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
         println("Type of coin selected is \(cointType)")
-        //self.navigationController.interactivePopGestureRecognizer.delegate = self
         
+        let frame = UIImage(named: "\(cointType)_\(counter).png")
+        imageView.image = frame
         
         swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right;
@@ -169,7 +176,7 @@ class DetailViewController: UIViewController {
         println("Counter = \(counter)")
         
         counter++
-        if counter == 73 {
+        if counter == numberOfPicsForCoin {
             counter = 1
             currentNumberOfRotations++
             
@@ -177,7 +184,7 @@ class DetailViewController: UIViewController {
                invalidateTimerAndSetFinalImage()
             }
         }else{
-            let frame = UIImage(named: "\(counter).png")
+            let frame = UIImage(named: "\(cointType)_\(counter).png")
             imageView.image = frame
         }
         
@@ -200,12 +207,12 @@ class DetailViewController: UIViewController {
         println("Probability of Head is \(probabilityOfHead)")
         
         if probabilityOfHead > 4 {
-            finalImageNum = 36;
+            finalImageNum = numberOfPicsForCoin/2;
         }
         
-        println("Setting \(finalImageNum) as the final image")
+        println("Setting \(cointType)_\(finalImageNum) as the final image")
         
-        let frame = UIImage(named: "\(finalImageNum).png")
+        let frame = UIImage(named: "\(cointType)_\(finalImageNum).png")
         imageView.image = frame
         
         //After setting final result image, enable gestures

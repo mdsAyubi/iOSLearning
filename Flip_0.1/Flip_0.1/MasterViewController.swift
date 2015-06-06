@@ -11,7 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var objects = [AnyObject]()
-    var coins = ["Dollar","Euro"]
+    var coins = ["Dollar","Pound"]
     
     override func awakeFromNib() {
         super.awakeFromNib()

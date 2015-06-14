@@ -38,7 +38,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         println(locations[0])
         
-        var userLocation:CLLocation = locations[0] as CLLocation
+        var userLocation:CLLocation = locations[0] as! CLLocation
         self.latitudeLabel.text = "\(userLocation.coordinate.latitude)"
         self.longitudeLabel.text = "\(userLocation.coordinate.longitude)"
         
@@ -53,7 +53,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             if (error != nil){
                 println(error)
             } else{
-                if let p = CLPlacemark(placemark: placemarks?[0] as CLPlacemark){
+                if let p = CLPlacemark(placemark: placemarks?[0] as! CLPlacemark){
                     println(p)
                     self.addressLabel.text = "\(p.locality), \(p.country)"
                 }

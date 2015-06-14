@@ -25,7 +25,7 @@ class ViewController: UIViewController {
                 println("Could not get data...")
             }else{
                 //println(data)
-                let jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+                let jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
                 println(jsonResult)
                 println(jsonResult["country_code"])
                 

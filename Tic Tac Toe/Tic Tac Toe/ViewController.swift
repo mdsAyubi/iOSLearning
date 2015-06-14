@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         var button:UIButton
         
         for var i=0; i<9 ; i++ {
-            button = view.viewWithTag(i) as UIButton
+            button = view.viewWithTag(i) as! UIButton
             button.setImage(nil, forState: .Normal)
         }
         

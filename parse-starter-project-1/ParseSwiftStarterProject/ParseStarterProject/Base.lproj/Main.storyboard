@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -147,11 +148,88 @@
                             <outlet property="delegate" destination="1Sg-Ks-i6w" id="pcn-wC-Ne2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="H7f-1K-g93"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="H7f-1K-g93">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="f4U-Cw-rkr">
+                            <connections>
+                                <segue destination="PVT-D8-UbF" kind="show" id="yr4-w4-98J"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3jH-bL-xrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1290" y="342"/>
+            <point key="canvasLocation" x="847.5" y="369.5"/>
+        </scene>
+        <!--Post Images-->
+        <scene sceneID="wKE-sv-tam">
+            <objects>
+                <viewController title="Post Images" id="PVT-D8-UbF" customClass="PostImageViewController" customModule="ParseStarterProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C2y-lC-SQ4"/>
+                        <viewControllerLayoutGuide type="bottom" id="L0c-Tp-Lz5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hbc-1R-7va">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic.png" translatesAutoresizingMaskIntoConstraints="NO" id="bu9-Rq-NWg">
+                                <rect key="frame" x="0.0" y="78" width="375" height="315"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NJ-P4-qGn">
+                                <rect key="frame" x="16" y="406" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Choose an Image">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseImage:" destination="PVT-D8-UbF" eventType="touchUpInside" id="1dS-9X-orw"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7TA-NR-Myy">
+                                <rect key="frame" x="16" y="448" width="343" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEv-pe-FRe">
+                                <rect key="frame" x="16" y="486" width="343" height="34"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Post Image">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="postImage:" destination="PVT-D8-UbF" eventType="touchUpInside" id="sBb-uA-JnE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="bu9-Rq-NWg" secondAttribute="centerX" id="23P-I0-Aqn"/>
+                            <constraint firstItem="7TA-NR-Myy" firstAttribute="top" secondItem="6NJ-P4-qGn" secondAttribute="bottom" constant="8" id="4vw-64-PVe"/>
+                            <constraint firstItem="bu9-Rq-NWg" firstAttribute="leading" secondItem="Hbc-1R-7va" secondAttribute="leadingMargin" constant="-16" id="DVz-Oh-HeI"/>
+                            <constraint firstItem="7TA-NR-Myy" firstAttribute="trailing" secondItem="Hbc-1R-7va" secondAttribute="trailingMargin" id="F1p-AQ-ZdB"/>
+                            <constraint firstItem="6NJ-P4-qGn" firstAttribute="trailing" secondItem="Hbc-1R-7va" secondAttribute="trailingMargin" id="SB0-Vx-gnL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bu9-Rq-NWg" secondAttribute="trailing" constant="-16" id="Sff-Ni-Doy"/>
+                            <constraint firstItem="6NJ-P4-qGn" firstAttribute="leading" secondItem="Hbc-1R-7va" secondAttribute="leadingMargin" id="UWJ-44-HiK"/>
+                            <constraint firstItem="6NJ-P4-qGn" firstAttribute="top" secondItem="bu9-Rq-NWg" secondAttribute="bottom" constant="13" id="VJp-Yq-ZmF"/>
+                            <constraint firstItem="DEv-pe-FRe" firstAttribute="trailing" secondItem="Hbc-1R-7va" secondAttribute="trailingMargin" id="bdS-Fd-RTf"/>
+                            <constraint firstItem="7TA-NR-Myy" firstAttribute="leading" secondItem="Hbc-1R-7va" secondAttribute="leadingMargin" id="eRq-Dd-y7t"/>
+                            <constraint firstAttribute="centerX" secondItem="6NJ-P4-qGn" secondAttribute="centerX" id="hTC-PC-45F"/>
+                            <constraint firstItem="DEv-pe-FRe" firstAttribute="leading" secondItem="Hbc-1R-7va" secondAttribute="leadingMargin" id="uqu-QG-Yio"/>
+                            <constraint firstItem="bu9-Rq-NWg" firstAttribute="top" secondItem="C2y-lC-SQ4" secondAttribute="bottom" constant="58" id="x3H-rX-T73"/>
+                            <constraint firstItem="DEv-pe-FRe" firstAttribute="top" secondItem="7TA-NR-Myy" secondAttribute="bottom" constant="8" id="zVL-eS-Awr"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageToPost" destination="bu9-Rq-NWg" id="oDq-HQ-gFU"/>
+                        <outlet property="message" destination="7TA-NR-Myy" id="Lkb-fd-WJd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OgY-DJ-aYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1312.5" y="369.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="usE-GN-qDQ">
@@ -167,7 +245,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6m-xX-Ahp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="440" y="342"/>
+            <point key="canvasLocation" x="379.5" y="369.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pic.png" width="315" height="315"/>
+    </resources>
 </document>

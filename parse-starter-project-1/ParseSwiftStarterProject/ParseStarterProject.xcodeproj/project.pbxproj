@@ -10,6 +10,8 @@
 		539339581B3FD207005EE827 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539339571B3FD207005EE827 /* TableViewController.swift */; };
 		5394B4711B41ECD0008F86B0 /* pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 5394B4701B41ECD0008F86B0 /* pic.png */; };
 		5394B4731B41F0A8008F86B0 /* PostImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5394B4721B41F0A8008F86B0 /* PostImageViewController.swift */; };
+		53ACE1D21B433F82009FA37C /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ACE1D11B433F82009FA37C /* Cell.swift */; };
+		53ACE1D41B434107009FA37C /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ACE1D31B434107009FA37C /* FeedTableViewController.swift */; };
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
 		81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814C1A49DA1800E65899 /* ViewController.swift */; };
 		81BA81501A49DA1800E65899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81BA814E1A49DA1800E65899 /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 		539339571B3FD207005EE827 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		5394B4701B41ECD0008F86B0 /* pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic.png; sourceTree = "<group>"; };
 		5394B4721B41F0A8008F86B0 /* PostImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageViewController.swift; sourceTree = "<group>"; };
+		53ACE1D11B433F82009FA37C /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		53ACE1D31B434107009FA37C /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		81BA81451A49DA1800E65899 /* ParseStarterProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParseStarterProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BA81491A49DA1800E65899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81BA814A1A49DA1800E65899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				5394B4701B41ECD0008F86B0 /* pic.png */,
 				81BA814C1A49DA1800E65899 /* ViewController.swift */,
 				81BA814E1A49DA1800E65899 /* Main.storyboard */,
+				53ACE1D31B434107009FA37C /* FeedTableViewController.swift */,
+				53ACE1D11B433F82009FA37C /* Cell.swift */,
 				5394B4721B41F0A8008F86B0 /* PostImageViewController.swift */,
 				81BA81511A49DA1800E65899 /* Images.xcassets */,
 				81BA81481A49DA1800E65899 /* Supporting Files */,
@@ -221,7 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5394B4731B41F0A8008F86B0 /* PostImageViewController.swift in Sources */,
+				53ACE1D41B434107009FA37C /* FeedTableViewController.swift in Sources */,
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
+				53ACE1D21B433F82009FA37C /* Cell.swift in Sources */,
 				539339581B3FD207005EE827 /* TableViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 			);

@@ -1,0 +1,14 @@
+{
+  "global": {
+    "parseVersion": "1.4.2"
+  },
+  "applications": {
+    "Instagram": {
+      "applicationId": "v02nftHkCHuj5C72n1cXnGefVJkXvcqA40Tjl4uP",
+      "masterKey": "ltThgypYARXPok7e4WyhBdQ3n1YXV0H05GQpVPHZ"
+    },
+    "_default": {
+      "link": "Instagram"
+    }
+  }
+}

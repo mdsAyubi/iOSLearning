@@ -1,0 +1,32 @@
+***What's in iOS
+
+-Cocoa Touch --Alerts, buttons, sliders, camera, map kit, web view.
+-Media --For images, video, audio, openGL
+-Core Services --Frameworks
+-Core OS --Kernel etc
+
+***Platform Components
+Tools --XCode
+Language --Swift, Objective C
+Frameworks --Foundation, Core Data, UIKit,Core Motion, Map Kit
+Design Strategy --MVC
+
+Demo for Calculator:
+
+Optional: Not Set(nil) OR Something(With some type)
+It cant be a String with can be nil but an Optional which can be String.
+
+***MVC
+Model: What your application is (not hoe it is displayed)
+Controler: How the Model is to be displayed in the UI
+View: The controller's minions
+
+Controller ->Model, View are allowed
+Model to View ->Never
+View to Controller -> Restricted  Way..like an action,delegate,protocol(will,should,did), data source 
+Model to Controller -> Notification & KVO. Broadcasts information.
+
+Multiple MVCs can be working together.
+
+
+

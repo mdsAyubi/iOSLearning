@@ -30,3 +30,349 @@ Multiple MVCs can be working together.
 
 
 
+Structs cant have inheritance and they are passed by value not reference.
+
+Lecture -4 
+***Optional
+
+enum Optional<T>{
+	case None
+	case Some(T)
+}
+
+let x: String? = nil ==>> let x = Optional<String>.None
+let x: String? = "hello" ==>> let x = Optional<String>.Some("hello")
+
+var y=x! ==>> switch x {
+	case Some(let value): y = value
+	case None: //exception
+}
+
+***Array
+var a = Array<String>()
+var a = [String]()
+
+let arrays cant be mutated.
+array index out of bound.
+
+for ... in to loop through values
+
+
+***Dictionaries
+var a = Dictionary<String,Int>()
+var a = [String:Int]()
+
+a = ["Stan":1,"Cal":10]
+Returns an optional 
+
+for (key,value) in a {
+	
+}
+
+***Range
+Just two end points of a sensible type
+It is generic
+struct Range<T>{
+	var startIndex:T
+	var endIndex:T
+}
+
+let a = ["a","b","c","d"]
+
+let subarray = a[2...3] //["c","d"]
+let subarray2= a[2..<3] //["c"]
+
+for i in [27...104] {}// enumerable
+
+***NSObject
+Base of all Objective C classes
+
+***NSNumber
+Number holding class
+let n = NSNumber(35.5)
+let val = n.intValue
+
+***NSDate
+For dates. NSCalendar,NSDateFormatter,NSDateComponents
+
+***NSData
+Bag of bits
+
+***DS in Swift
+Classes, Struct, and Enum
+-Decalaration Syntax
+-Properties and functions
+-Initializers
+
+Difference:
+-Inheritance (Classes only)
+-Introspection and casting(class only)
+-Value type(struct,enum) vs Reference type(class)
+
+***Value vs refrence
+-Value types are copied when passed to methods or assigned.
+-Var is mutable , let is not 
+-mutating keyword
+
+-Reference(class)
+-Stored in heap
+-Constant pointers to a class
+
+
+***Method
+
+-Override
+-final(cant be over ridden). Can mark the enitre class final
+-Instances and types can have methods
+-static and instance methods concept
+
+-Parameter Name: internal name and external name
+eg: func foo(external internal: Int){
+	let local = internal
+}
+func bar(){
+	let result = foo(external:123)
+}
+_ if you dont want external names
+# force external names to be the same as internal for the first
+for others, internal names are by default the external names
+
+First param should be obvious, second you have to tell others.
+
+***Properties
+-Property Observers: cna observe change to properties
+
+var someProp : Int = 42 {
+	willSet{newValue is the new new value}
+	didSet{oldValue is the old value}
+}
+
+Can be done on inherited prop also
+-Used to update ui for example
+
+-Lazy Initialization: Does not get initialized unless someone accesses it.
+
+lazy var brain = CalculatorBrain()
+
+lazy var someProp:Type = {
+	return <constrcuted value>
+}()
+
+lazy var myProp = self.initializeMyProperty()
+Only vars can be lazy initialized not let.
+
+***Initialization
+-When needed?  
+--Free Inits: When all properties in a base class have defaults, you get init() for free
+--If a struct has no initializers, it will have a default one with all the properties as arguments
+
+struct MyStruct{
+	var x:Int = 42
+	var y:String = "somehting"
+
+	init(x:int,y:String)//comes for free
+
+}
+--Set properties
+--Can set let properties when they are just there.
+--Can call other init methods with different arguments
+--Can call super.init
+
+What is required to do in init
+--All properties must have values
+--Two types of init, designated and convinience
+--A designated init can only and can only call designated init of the super class
+--Initializers all of your own property before you call the super init
+--Call super init before you assign a value to init in your own class.
+
+--Convinice init can only call a designated init in its own class
+--Convinice init may call a designtaed init indirectly(through other convinice init)
+--Must call before touching any values
+
+--IF you do not implement any desigated inits, you get all of super classes designated inits
+--If you implement no inits, you’ll inherit all of your superclass’s inits
+--Any init inherited by these rules qualifies to satisfy any of the rules on the previous slide
+
+Required init--subclasses must implement
+Failable init--allowed to fail and return nil
+
+init?(arg1:Type,...){
+	//might return nil here
+}
+
+eg. UIImage
+
+
+--Create Object
+let x = CalculatorBrain()
+let y = ComplicatedObject(arg1:42,arg2:"hello")
+let z = [String]()
+
+let button = UIButton.buttonWithType(UIButtonType.System)
+let csString:String = ",".join(myArray)
+
+***AnyObject
+Special type(actualy a Protocol)
+Used for compatibility
+
+eg. var destinatioController:AnyObject
+var toolbar:[AnyObject]
+
+as arguments to function
+fucn prepareForSegue(segue:UIStoryBoard,sender:AmyObject)
+fucn addConstraints(constant:[AnyObject])
+
+--How do we use it?
+Use typecast keyword "as"
+
+let calcVC = destinationViewController as CalculatorViewController
+if let calcVC = destinationViewController as? ClculatorViewController{...}
+
+as? returns an Optional
+
+Or, if destinationVC is CalculatorViewController{...}
+
+--Casting Arrays of AnyObject?
+
+var toolBarItems :[AnyObject]
+for item in toolBarItems {
+	if let toolBarItem = item as? UIBarButtonItem{
+	//do something
+	}
+}
+
+or,
+for toolBarItem in toolBarItems as [UIButtonItem] {//better be so, else crash
+	
+}
+//can't do as? here
+
+***Casting
+Can cast the classes in the same inherittance tree.
+
+***Functions
+Somme Array<T> methods
++= [T] // not += T
+
+first -> T? //note optional
+last -> T? //note optional
+
+append(T)
+insert(T, atIndex:Int)
+splice
+removeAtIndex
+removeRange
+replaceRange
+
+sort(isOrderedBefore:(T,T)->Bool) //inplace
+eg. a.sort {$0<$1}
+
+sorted //returns a sorted method , not inplace
+
+filter 
+map(transform:(T->U) ->[U])
+
+eg. let stringified:[String] = [1,2,3].map{"\($0)"}
+
+reduce(initial:U,combine:(U,T)->U)->U
+
+eg. let sum:Int = [1,2,3].reduce(0){$0+$1}
+
+
+***String
+--String.Index
+--advance(String.Index,Int)
+
+var s = "hello"
+let index = advance(s.startIndex,2) //l
+
+s.splice("abc",index) //heabcllo
+let startIndex = advance(s.startIndex,1)
+let endIndex = advance(s.startIndex,6)
+
+let substring = s[index..<endIndex] //eabcl
+
+eg. let num = "56.25"
+if let decimalRange = num.rangeOfString("."){
+	let wholePart = num[num.startIndex..<decimalRange.startIndex]
+
+}
+
+***Type Conversion
+
+let d:Double = 37.5
+let x = Int(d) //truncates
+
+let a= Array("abc")
+let s = String(["a"],"b","c")
+
+***Assertion
+//Crash if things you want are not what you want
+assert(()->Bool,"message")
+
+eg assert(validation() != nil,"the validation func returned nil")
+
+***Global Methods
+
+let count =countElements(aCollection)
+let sub = dropFirst(aCollection)
+let sub = dropLast(aCollection)
+let first = first(aCollection)
+let last = last(aCollection)
+let prefix = prefix(aSliecable,X:Int)
+let suffix = suffix(aSliceable,X:Int)
+let reversed:Array = reverse(aCollection)
+let backWardString = String(reverse(s))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

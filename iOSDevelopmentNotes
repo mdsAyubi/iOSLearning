@@ -324,13 +324,232 @@ let suffix = suffix(aSliceable,X:Int)
 let reversed:Array = reverse(aCollection)
 let backWardString = String(reverse(s))
 
+***Objective C Compatibility:
+-Bridging
+-NSString is bridged to String
+-NSArray is bridged to Array<Object>
+-NSDictionary is bridged to Dictionary<NSObject,AnyObject>
+-Int, Float, Double, Bool to NSNumber also bridged to ctype int, float,double
+
+-Casting from String to NSString and vice versa
+Array from NSArray can be casted.
+
+-Keys in NSDictionarty are NSObject sub classes.
 
 
+***Property List
+Property list is really just the definition of a term. It means an AnyObject which is known to be a collection of objects which are only of the type NSString, NSArray,NSDictionary, NSNumber,NSDate,NSData
+
+Used to pass data around blindly. 
+
+***NSUserDefaults
+-Stores small data of property list as dictionary
+
+setObject(AnyObject,forKey:String)
+objectForKey(String)->AnyObject
+arrayForKey(String)->Array<AnyObject>
+
+-Small database
+let defaults = NSUserDefaults.standardUserDefaults()
+if !defaults.synchronize()
+
+==Demo
+
+***Views
+Represents a rectangular area.(UIView)
+-Hierarchical
+
+UIWindow --The very top hierarchy. Not much used.
+View can be added from code as well.
+addSubView(aView:UIView)
+
+Top Level View: view property in the ViewController
+Initializers for View: 
+init(frame: CGRect)
+init(coder:NSCoder)
+
+Sample Init for Views
+
+override init(frame:CGRect){
+	super.init(frame:frame)
+	setup()
+}
+required init(coder aDecoder:NSCoder){ //required initializer
+	super.init(coder:aDecoder)
+	setup()
+}
+
+-awakeFromNib() When coming from storyboard
+
+***Coordinate System Data Structures
+All coordinates are CGFloat
+let cfg = CGFloat(aDouble)
+
+CGPoint
+CGSize
+struct CGRect{
+	var origin: CGPoint
+	var size: CGSize
+}
+
+let rect = CGRect(origin: aCGPoint, size: aCGSize)
+
+-Methods
+minX
+midY
+intersects
+contains(CGPoint) -> Bool
+
+-Origin is top left.
+-Units are points not pixels
+-contentScaleFactor: CGFloat number of pixels per point.
+
+-Boundaries
+var bounds : CGRect
+
+UIView
+-center var center:CGPoint in superview
+-frame 	var frame: CGRect //the rect containing a UIView in its sueprviews coord system
+
+Use frame or center to position a UIView
+These are never used to draw inside a view's coord system
 
 
+---Creating Views
+Mostly by storyboard
+Or by code: let newView = UIView(frame:myViewFrame)
+
+eg:
+let labelRect = CGRect(x:20,y:20,width:100,height:50)
+let label = UILabel(frame:labelRect)
+label.text = "Hello"
+view.addSubView(label)
 
 
+NEVER call drawRect yourself. Its called by the system.
 
+***Custom Views
+C like API
+UIBezierPath
+
+Concepts:
+Get a context by UIGraphicsGetCurrentContext()
+Create paths
+Set drawing attributes like colors, textures, linewidths, linecaps
+Stroke or fill
+
+UIBezierPath-automatically draws in the current context
+Methods for lineto, arcs
+methods to stroke or fill
+
+eg:
+let path = UIBezierPath
+path.moveToPoint(CGPoint(80,50))
+path.addLineToPoint(CGPoint(140,150))
+path.addLineToPoint(CGPoint(10,150))
+
+Close the path
+path.closePath()
+
+Set attribbutes and stroke/fill
+UIColor.greenColor().setFill() //on UIColor
+UIColor.redColor().setStroke() //on UIColor
+path.lineWidth = 3.0
+path.fill()
+
+--Common shapes like biunded rectangle
+--addClip //only shapes in the clip will display
+--containsPoint
+
+UIColor
+backgroundColor:UIColor
+colors with alpha component, opaque or transparent
+
+tell the system you are using transparency
+var opaque = false
+
+Entire View Transparent
+var alpha
+
+
+hidden view
+
+--Drawing Text
+let text NSAttributedString("hello")
+text.drawAtPoint(aCGPoint)
+
+NSAttributedString is not String or NSString
+
+You can set attributes using
+setAttributes
+addAttributes
+
+***Fonts
+preferredFontForTextStyle(UIFontTextStyle) ->UIFont
+
+UIFontTextStyle.Headline
+UIFontTextStyle.Body
+UIFontTextStyle.Footnote
+
+--System Fonts   Dont use for user content
+
+Drawing Images:
+UIImageView
+let image :UIImage? = UIImage(named: "foo")
+Can be created from file System
+
+drawAtPoint et all
+
+Redraw on bounds change:
+--var contentMode : UIViewContentMode
+
+
+==Demo
+
+***Extensions
+Add methods and properties to existing classses and enums
+
+Cant add existing methods or properties
+Only computed properties
+
+***Protocols
+A way to express an API minimally
+Just like a type..
+Has no implementation, only declaration
+
+Protocol declaration
+Declaring that a class will conform
+Actual implementation
+Can be made to be conformed by only class
+
+***Delegation
+Its how we can implement blind communication between a View and its Controller
+
+How?
+a. Create a delegation protocol(defines what the view want the Controller to take care of)
+b. Create a delegate property in the View whose type is the delegation protocol
+c. Use delegate property in the view to get/do things it cant own or control
+d. Controller declares that it implements the protocol
+e. Controller sets self as the delegate of the View by setting the property in b
+f. Implement the protocol in the Controller
+
+eg. table view and table view controller
+
+===Demo for Delegation
+
+***Gestures
+UIGestureRecognizer abstract
+eg UIPanGestureRecognizer
+UIPinchGestureRecognizer
+UIRotationGestureRecognizer
+UISwiperGestureRecognizer
+UITapGestureRecognizer gives a finnger count
+
+===Demo
+
+***Multiple MVCs
+UINAvigationController --pushed and pops MVcs off of a stack
+navigationItem propert and toolbarItems property
 
 
 

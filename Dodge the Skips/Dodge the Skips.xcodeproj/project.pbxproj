@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		535AE3111CF1F85C00D8AF7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AE3101CF1F85C00D8AF7C /* AppDelegate.swift */; };
+		535AE3151CF1F85C00D8AF7C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AE3141CF1F85C00D8AF7C /* GameScene.swift */; };
+		535AE3171CF1F85C00D8AF7C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AE3161CF1F85C00D8AF7C /* GameViewController.swift */; };
+		535AE31A1CF1F85C00D8AF7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 535AE3181CF1F85C00D8AF7C /* Main.storyboard */; };
+		535AE31C1CF1F85C00D8AF7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 535AE31B1CF1F85C00D8AF7C /* Assets.xcassets */; };
+		535AE31F1CF1F85C00D8AF7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 535AE31D1CF1F85C00D8AF7C /* LaunchScreen.storyboard */; };
+		535AE32A1CF1F85C00D8AF7C /* Dodge_the_SkipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AE3291CF1F85C00D8AF7C /* Dodge_the_SkipsTests.swift */; };
+		535AE3351CF1F85C00D8AF7C /* Dodge_the_SkipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AE3341CF1F85C00D8AF7C /* Dodge_the_SkipsUITests.swift */; };
+		535AE3431CF2184700D8AF7C /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AE3421CF2184700D8AF7C /* Hero.swift */; };
+		535AE3451CF2211000D8AF7C /* BadGuy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AE3441CF2211000D8AF7C /* BadGuy.swift */; };
+		53C4B6961CF4EB0D0044B009 /* HitParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 53C4B6941CF4EB0D0044B009 /* HitParticle.sks */; };
+		53C4B6971CF4EB0D0044B009 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 53C4B6951CF4EB0D0044B009 /* spark.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		535AE3261CF1F85C00D8AF7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 535AE3051CF1F85C00D8AF7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 535AE30C1CF1F85C00D8AF7C;
+			remoteInfo = "Dodge the Skips";
+		};
+		535AE3311CF1F85C00D8AF7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 535AE3051CF1F85C00D8AF7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 535AE30C1CF1F85C00D8AF7C;
+			remoteInfo = "Dodge the Skips";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		535AE30D1CF1F85C00D8AF7C /* Dodge the Skips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dodge the Skips.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		535AE3101CF1F85C00D8AF7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		535AE3141CF1F85C00D8AF7C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		535AE3161CF1F85C00D8AF7C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		535AE3191CF1F85C00D8AF7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		535AE31B1CF1F85C00D8AF7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		535AE31E1CF1F85C00D8AF7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		535AE3201CF1F85C00D8AF7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		535AE3251CF1F85C00D8AF7C /* Dodge the SkipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dodge the SkipsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		535AE3291CF1F85C00D8AF7C /* Dodge_the_SkipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dodge_the_SkipsTests.swift; sourceTree = "<group>"; };
+		535AE32B1CF1F85C00D8AF7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		535AE3301CF1F85C00D8AF7C /* Dodge the SkipsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dodge the SkipsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		535AE3341CF1F85C00D8AF7C /* Dodge_the_SkipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dodge_the_SkipsUITests.swift; sourceTree = "<group>"; };
+		535AE3361CF1F85C00D8AF7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		535AE3421CF2184700D8AF7C /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		535AE3441CF2211000D8AF7C /* BadGuy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadGuy.swift; sourceTree = "<group>"; };
+		53C4B6941CF4EB0D0044B009 /* HitParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = HitParticle.sks; path = ../HitParticle.sks; sourceTree = "<group>"; };
+		53C4B6951CF4EB0D0044B009 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../spark.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		535AE30A1CF1F85C00D8AF7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		535AE3221CF1F85C00D8AF7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		535AE32D1CF1F85C00D8AF7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		535AE3041CF1F85C00D8AF7C = {
+			isa = PBXGroup;
+			children = (
+				535AE30F1CF1F85C00D8AF7C /* Dodge the Skips */,
+				535AE3281CF1F85C00D8AF7C /* Dodge the SkipsTests */,
+				535AE3331CF1F85C00D8AF7C /* Dodge the SkipsUITests */,
+				535AE30E1CF1F85C00D8AF7C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		535AE30E1CF1F85C00D8AF7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				535AE30D1CF1F85C00D8AF7C /* Dodge the Skips.app */,
+				535AE3251CF1F85C00D8AF7C /* Dodge the SkipsTests.xctest */,
+				535AE3301CF1F85C00D8AF7C /* Dodge the SkipsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		535AE30F1CF1F85C00D8AF7C /* Dodge the Skips */ = {
+			isa = PBXGroup;
+			children = (
+				535AE3101CF1F85C00D8AF7C /* AppDelegate.swift */,
+				535AE3141CF1F85C00D8AF7C /* GameScene.swift */,
+				535AE3161CF1F85C00D8AF7C /* GameViewController.swift */,
+				535AE3181CF1F85C00D8AF7C /* Main.storyboard */,
+				535AE31B1CF1F85C00D8AF7C /* Assets.xcassets */,
+				535AE31D1CF1F85C00D8AF7C /* LaunchScreen.storyboard */,
+				53C4B6941CF4EB0D0044B009 /* HitParticle.sks */,
+				53C4B6951CF4EB0D0044B009 /* spark.png */,
+				535AE3201CF1F85C00D8AF7C /* Info.plist */,
+				535AE3421CF2184700D8AF7C /* Hero.swift */,
+				535AE3441CF2211000D8AF7C /* BadGuy.swift */,
+			);
+			path = "Dodge the Skips";
+			sourceTree = "<group>";
+		};
+		535AE3281CF1F85C00D8AF7C /* Dodge the SkipsTests */ = {
+			isa = PBXGroup;
+			children = (
+				535AE3291CF1F85C00D8AF7C /* Dodge_the_SkipsTests.swift */,
+				535AE32B1CF1F85C00D8AF7C /* Info.plist */,
+			);
+			path = "Dodge the SkipsTests";
+			sourceTree = "<group>";
+		};
+		535AE3331CF1F85C00D8AF7C /* Dodge the SkipsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				535AE3341CF1F85C00D8AF7C /* Dodge_the_SkipsUITests.swift */,
+				535AE3361CF1F85C00D8AF7C /* Info.plist */,
+			);
+			path = "Dodge the SkipsUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		535AE30C1CF1F85C00D8AF7C /* Dodge the Skips */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 535AE3391CF1F85C00D8AF7C /* Build configuration list for PBXNativeTarget "Dodge the Skips" */;
+			buildPhases = (
+				535AE3091CF1F85C00D8AF7C /* Sources */,
+				535AE30A1CF1F85C00D8AF7C /* Frameworks */,
+				535AE30B1CF1F85C00D8AF7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dodge the Skips";
+			productName = "Dodge the Skips";
+			productReference = 535AE30D1CF1F85C00D8AF7C /* Dodge the Skips.app */;
+			productType = "com.apple.product-type.application";
+		};
+		535AE3241CF1F85C00D8AF7C /* Dodge the SkipsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 535AE33C1CF1F85C00D8AF7C /* Build configuration list for PBXNativeTarget "Dodge the SkipsTests" */;
+			buildPhases = (
+				535AE3211CF1F85C00D8AF7C /* Sources */,
+				535AE3221CF1F85C00D8AF7C /* Frameworks */,
+				535AE3231CF1F85C00D8AF7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				535AE3271CF1F85C00D8AF7C /* PBXTargetDependency */,
+			);
+			name = "Dodge the SkipsTests";
+			productName = "Dodge the SkipsTests";
+			productReference = 535AE3251CF1F85C00D8AF7C /* Dodge the SkipsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		535AE32F1CF1F85C00D8AF7C /* Dodge the SkipsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 535AE33F1CF1F85C00D8AF7C /* Build configuration list for PBXNativeTarget "Dodge the SkipsUITests" */;
+			buildPhases = (
+				535AE32C1CF1F85C00D8AF7C /* Sources */,
+				535AE32D1CF1F85C00D8AF7C /* Frameworks */,
+				535AE32E1CF1F85C00D8AF7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				535AE3321CF1F85C00D8AF7C /* PBXTargetDependency */,
+			);
+			name = "Dodge the SkipsUITests";
+			productName = "Dodge the SkipsUITests";
+			productReference = 535AE3301CF1F85C00D8AF7C /* Dodge the SkipsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		535AE3051CF1F85C00D8AF7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Athvillar;
+				TargetAttributes = {
+					535AE30C1CF1F85C00D8AF7C = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9VZF66S37V;
+					};
+					535AE3241CF1F85C00D8AF7C = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9VZF66S37V;
+						TestTargetID = 535AE30C1CF1F85C00D8AF7C;
+					};
+					535AE32F1CF1F85C00D8AF7C = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9VZF66S37V;
+						TestTargetID = 535AE30C1CF1F85C00D8AF7C;
+					};
+				};
+			};
+			buildConfigurationList = 535AE3081CF1F85C00D8AF7C /* Build configuration list for PBXProject "Dodge the Skips" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 535AE3041CF1F85C00D8AF7C;
+			productRefGroup = 535AE30E1CF1F85C00D8AF7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				535AE30C1CF1F85C00D8AF7C /* Dodge the Skips */,
+				535AE3241CF1F85C00D8AF7C /* Dodge the SkipsTests */,
+				535AE32F1CF1F85C00D8AF7C /* Dodge the SkipsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		535AE30B1CF1F85C00D8AF7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53C4B6971CF4EB0D0044B009 /* spark.png in Resources */,
+				535AE31F1CF1F85C00D8AF7C /* LaunchScreen.storyboard in Resources */,
+				535AE31C1CF1F85C00D8AF7C /* Assets.xcassets in Resources */,
+				535AE31A1CF1F85C00D8AF7C /* Main.storyboard in Resources */,
+				53C4B6961CF4EB0D0044B009 /* HitParticle.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		535AE3231CF1F85C00D8AF7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		535AE32E1CF1F85C00D8AF7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		535AE3091CF1F85C00D8AF7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				535AE3151CF1F85C00D8AF7C /* GameScene.swift in Sources */,
+				535AE3171CF1F85C00D8AF7C /* GameViewController.swift in Sources */,
+				535AE3111CF1F85C00D8AF7C /* AppDelegate.swift in Sources */,
+				535AE3451CF2211000D8AF7C /* BadGuy.swift in Sources */,
+				535AE3431CF2184700D8AF7C /* Hero.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		535AE3211CF1F85C00D8AF7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				535AE32A1CF1F85C00D8AF7C /* Dodge_the_SkipsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		535AE32C1CF1F85C00D8AF7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				535AE3351CF1F85C00D8AF7C /* Dodge_the_SkipsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		535AE3271CF1F85C00D8AF7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 535AE30C1CF1F85C00D8AF7C /* Dodge the Skips */;
+			targetProxy = 535AE3261CF1F85C00D8AF7C /* PBXContainerItemProxy */;
+		};
+		535AE3321CF1F85C00D8AF7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 535AE30C1CF1F85C00D8AF7C /* Dodge the Skips */;
+			targetProxy = 535AE3311CF1F85C00D8AF7C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		535AE3181CF1F85C00D8AF7C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				535AE3191CF1F85C00D8AF7C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		535AE31D1CF1F85C00D8AF7C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				535AE31E1CF1F85C00D8AF7C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		535AE3371CF1F85C00D8AF7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		535AE3381CF1F85C00D8AF7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		535AE33A1CF1F85C00D8AF7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Dodge the Skips/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Athvillar.Dodge-the-Skips";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		535AE33B1CF1F85C00D8AF7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Dodge the Skips/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Athvillar.Dodge-the-Skips";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		535AE33D1CF1F85C00D8AF7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "Dodge the SkipsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Athvillar.Dodge-the-SkipsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dodge the Skips.app/Dodge the Skips";
+			};
+			name = Debug;
+		};
+		535AE33E1CF1F85C00D8AF7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Dodge the SkipsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Athvillar.Dodge-the-SkipsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dodge the Skips.app/Dodge the Skips";
+			};
+			name = Release;
+		};
+		535AE3401CF1F85C00D8AF7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "Dodge the SkipsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Athvillar.Dodge-the-SkipsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Dodge the Skips";
+			};
+			name = Debug;
+		};
+		535AE3411CF1F85C00D8AF7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Dodge the SkipsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Athvillar.Dodge-the-SkipsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Dodge the Skips";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		535AE3081CF1F85C00D8AF7C /* Build configuration list for PBXProject "Dodge the Skips" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				535AE3371CF1F85C00D8AF7C /* Debug */,
+				535AE3381CF1F85C00D8AF7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		535AE3391CF1F85C00D8AF7C /* Build configuration list for PBXNativeTarget "Dodge the Skips" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				535AE33A1CF1F85C00D8AF7C /* Debug */,
+				535AE33B1CF1F85C00D8AF7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		535AE33C1CF1F85C00D8AF7C /* Build configuration list for PBXNativeTarget "Dodge the SkipsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				535AE33D1CF1F85C00D8AF7C /* Debug */,
+				535AE33E1CF1F85C00D8AF7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		535AE33F1CF1F85C00D8AF7C /* Build configuration list for PBXNativeTarget "Dodge the SkipsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				535AE3401CF1F85C00D8AF7C /* Debug */,
+				535AE3411CF1F85C00D8AF7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 535AE3051CF1F85C00D8AF7C /* Project object */;
+}
